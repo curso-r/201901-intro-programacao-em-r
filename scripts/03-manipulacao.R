@@ -4,7 +4,7 @@ library(tidyverse)
 
 # Base de dados -----------------------------------------------------------
 
-imdb <- read_rds("data/imdb.rds")
+imdb <- read_rds("dados/imdb.rds")
 
 # filter ------------------------------------------------------------------
 
@@ -137,8 +137,8 @@ imdb %>% arrange(desc(orcamento))
 imdb %>% arrange(desc(ano), titulo)
 
 # exercício 1
-# Ordene os filmes em ordem decrescente de lucro por ano e salve em um objeto chamado
-# filmes_ordenados
+# Ordene os filmes em ordem crescente de ano e decrescente de lucro e salve 
+# em um objeto chamado filmes_ordenados
 
 # exemplo 4
 # NA
@@ -211,6 +211,9 @@ imdb %>% mutate(duracao_horas = duracao/60)
 # install.packages("gender")
 library(gender)
 
+gender(c("William"), years = 2012)
+gender(c("Robin"), years = 2012)
+
 gender(c("Madison", "Hillary"), years = 1930, method = "ssa")
 gender(c("Madison", "Hillary"), years = 2010, method = "ssa")
 gender("Matheus", years = 1920)
@@ -237,7 +240,7 @@ obter_genero <- function(nome, ano) {
   genero
 }
 
-obter_genero("Madison", 1930)
+obter_genero("Ana", 1930)
 obter_genero("Matheus", 1930)
 
 # demora +- 10 min.
